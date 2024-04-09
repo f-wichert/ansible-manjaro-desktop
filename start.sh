@@ -12,4 +12,5 @@ echo "Enter the following information: (TODO)"
 sudo pacman -Syu
 
 # Install ansible
-sudo pacman -S ansible
+# sudo pacman -S ansible
+yay -S ansible-core-git
