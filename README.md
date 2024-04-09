@@ -10,7 +10,7 @@ I start with a Manjaro i3 "full" install.
 
 Then:
 ```bash
-sudo bash -c "$(wget -O - https://raw.github.com/f-wichert/ansible-manjaro-desktop/master/start.sh)"
+sudo su -c "bash <(wget -qO- https://raw.github.com/f-wichert/ansible-manjaro-desktop/master/start.sh)" root
 ```
 
 Reboot after finishing.
