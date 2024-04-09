@@ -17,17 +17,6 @@ Reboot after finishing.
 
 ## Things you might want to do before starting:
 
-### Healthchecks (optional)
-
-Create an account and have a UUID ready for it.
-
-Create the account here:
-
-[https://healthchecks.io/](https://healthchecks.io/)
-
-
-This will send an email notification in case of failures.
-
 ### Telegram (optional)
 
 Setup a telegram bot and have the chat_id and token ready.
