@@ -4,16 +4,19 @@ My approach at using ansible to automate my desktop setup, after I messed up my 
 
 This is my ansible solution to setup and configure a new computer.
 
-## Start
+## Setup
 
-I start with a Manjaro i3 "full" install.
+1. Don't forget to setup a wifi connection like I did.
 
+2. Start with a Manjaro i3 "full" install.
+
+3. Run the following command. This pulls the starting script, which runs a system upgrade, and starts the ansible playbook.
 Then:
 ```bash
 sudo su -c "bash <(wget -qO- https://raw.github.com/f-wichert/ansible-manjaro-desktop/master/start.sh)" root
 ```
 
-Reboot after finishing.
+3. Reboot after finishing.
 
 ## Things you might want to do before starting:
 
