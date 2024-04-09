@@ -9,8 +9,10 @@ echo -e "\n"
 echo "Enter the following information: (TODO)"
 
 # Full system upgrade
+echo "Full system upgrade..."
 sudo pacman -Syu
 
 # Install ansible
+echo "Installing ansible..."
 # sudo pacman -S ansible
 yay -S ansible-core-git
