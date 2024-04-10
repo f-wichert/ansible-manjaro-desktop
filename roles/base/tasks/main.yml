@@ -1,6 +1,9 @@
 ---
-- name: Install package firefox | base tasks
-  community.general.pacman:
-  #ansible.builtin.package:
-    name: firefox
-    state: present
+- name: base | configure manjaro (packages, apps, setup, etc...)
+  tags: install
+  block:
+    - import_tasks: roles/base/tasks/packages/main.yml
+    # - import_tasks: roles/base/tasks/services/example.yml
+    # - import_tasks: roles/base/tasks/ansible/setup.yml
+  rescue:
+    - set_fact: task_failed=true
