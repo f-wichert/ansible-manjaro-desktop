@@ -3,8 +3,29 @@
 - name: packages | add oh-my-zsh
   block:
     - name: oh-my-zsh | install zsh
-      apt:
+      community.general.pacman:
         name:
           - zsh
         state: latest
       register: oh_my_zsh
+
+    - name: oh-my-zsh | download oh-my-zsh script
+      get_url:
+        url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+        dest: /tmp/oh_my_zsh_script.sh
+        mode: 0755
+      when: oh_my_zsh.changed
+      register: oh_my_zsh_download
+
+    - name: oh-my-zsh | install oh-my-zsh script
+      become_user: '{{ user_login }}'
+      shell: sh -c /tmp/oh_my_zsh_script.sh
+      when: oh_my_zsh_download.changed
+      register: oh_my_zsh_install
+      ignore_errors: True
+
+    # jonathan 
+    # sorin
+    # strug
+
+    # headline

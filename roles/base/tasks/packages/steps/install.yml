@@ -2,15 +2,22 @@
 
 - name: install | pacman packages
   block:
-    - name: install | pacman packages
+    - name: install | pacman packages | coding
       community.general.pacman:
         name:
-          # coding
           - git
           # - code
           # - nodejs
-          # general applications
+        state: latest
+      register: packages
+      until: packages is success
+      retries: 10
+      delay: 10
+    - name: install | pacman packages | essential
+      community.general.pacman:
+        name:
           - firefox
+          # - insync
           # - thunderbird
           # - telegram
           # - obsidian
@@ -19,18 +26,11 @@
       until: packages is success
       retries: 10
       delay: 10
-    - name: install | additionl packages
+    - name: install | pacman packages | additional 
       community.general.pacman:
         name:
-          # coding
-          - git
-          # - code
-          # - nodejs
-          # general applications
-          - firefox
-          # - thunderbird
-          # - telegram
-          # - obsidian
+          - steam
+          - 
         state: latest
       register: packages
       until: packages is success

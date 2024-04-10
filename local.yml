@@ -1,6 +1,6 @@
 ---
 
-- name: Intro to Ansible Playbooks Test
+- name: Basic setup
   hosts: localhost
   become: true
   roles:

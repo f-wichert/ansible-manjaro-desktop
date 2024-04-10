@@ -50,3 +50,7 @@ Also:
 
 Use that as a reference to see what you would need to change.
 
+## Constants in the script
+There are a few potential sources of errors, so if something is not working for you, this section is meant as a little documentation of what might be wrong
+
+1. oh my zsh install script
