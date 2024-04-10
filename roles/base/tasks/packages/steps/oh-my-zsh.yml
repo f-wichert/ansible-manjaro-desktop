@@ -1,0 +1,10 @@
+---
+
+- name: packages | add oh-my-zsh
+  block:
+    - name: oh-my-zsh | install zsh
+      apt:
+        name:
+          - zsh
+        state: latest
+      register: oh_my_zsh

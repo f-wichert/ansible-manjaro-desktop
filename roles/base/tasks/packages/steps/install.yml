@@ -5,9 +5,15 @@
     - name: install | apt packages
       community.general.pacman:
         name:
-          # basic stuff and dependencies
+          # coding
           - git
-          - thunderbird
+          # - code
+          # - nodejs
+          # general applications
+          - firefox
+          # - thunderbird
+          # - telegram
+          # - obsidian
         state: latest
       register: packages
       until: packages is success
@@ -15,8 +21,3 @@
       delay: 10
   rescue:
     - set_fact: task_failed=true
-
-# - name: install | firefox
-#   community.general.pacman:
-#     name: firefox
-#     state: present
