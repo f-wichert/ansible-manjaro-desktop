@@ -1,6 +1,6 @@
 ---
 
-- name: Basic setup
+- name: Base configuration (packages, zsh, polybar, etc.)
   hosts: localhost
   become: true
   roles:
