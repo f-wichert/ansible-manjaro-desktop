@@ -9,7 +9,7 @@ fi
 
 
 # System update
-read "Do you want to start a full system upgrade? [Y,/n]" -i 'Y' response
+read -e -p "Do you want to start a full system upgrade? [Y/n]" -i 'Y' response
 
 while true; do
   case "$response" in
