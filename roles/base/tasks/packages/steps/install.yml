@@ -1,8 +1,25 @@
 ---
 
-- name: install | apt packages
+- name: install | pacman packages
   block:
-    - name: install | apt packages
+    - name: install | pacman packages
+      community.general.pacman:
+        name:
+          # coding
+          - git
+          # - code
+          # - nodejs
+          # general applications
+          - firefox
+          # - thunderbird
+          # - telegram
+          # - obsidian
+        state: latest
+      register: packages
+      until: packages is success
+      retries: 10
+      delay: 10
+    - name: install | additionl packages
       community.general.pacman:
         name:
           # coding
