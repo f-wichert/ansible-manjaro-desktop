@@ -1,0 +1,13 @@
+---
+
+- name: Intro to Ansible Playbooks
+
+  hosts: localhost
+
+
+
+  tasks:
+  - name: Install package firefox
+    community.general.pacman:
+      name: firefox
+      state: present

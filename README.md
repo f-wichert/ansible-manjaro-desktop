@@ -13,7 +13,7 @@ This is my ansible solution to setup and configure a new computer.
 3. Run the following command. This pulls the starting script, which runs a system upgrade, and starts the ansible playbook.
 Then:
 ```bash
-sudo su -c "bash <(wget -qO- https://raw.github.com/f-wichert/ansible-manjaro-desktop/master/start.sh)" root
+sudo su -c "bash <(wget -qO- https://raw.github.com/f-wichert/ansible-manjaro-desktop/main/start.sh)" root
 ```
 
 3. Reboot after finishing.
