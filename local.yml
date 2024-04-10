@@ -1,9 +1,8 @@
 ---
-collections:
-   - community.general
 
 - name: Intro to Ansible Playbooks Test
   hosts: localhost
+  src: community.general.pacman
   become: true
   roles:
     - test
