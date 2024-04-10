@@ -1,6 +1,6 @@
 ---
 - name: Install package firefox
   #community.general.pacman:
-  ansible.builtin.package
+  ansible.builtin.package:
     name: firefox
     state: present
