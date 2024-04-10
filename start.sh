@@ -9,7 +9,7 @@ fi
 
 
 # System update
-read -e -p "Do you want to start a full system upgrade? [Y/n]" -i 'Y' response
+#read -e -p "Do you want to start a full system upgrade? [Y/n]" -i 'Y' response
 read -e -p "Do you want to start a full system upgrade? [Y/n]" response
 
 while true; do
