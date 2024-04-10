@@ -1,4 +1,6 @@
 ---
+collections:
+   - community.general
 
 - name: Intro to Ansible Playbooks Test
   hosts: localhost
