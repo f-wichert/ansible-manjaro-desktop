@@ -1,5 +1,5 @@
 ---
-- name: Install package firefox
+- name: Install package firefox | test tasks
   community.general.pacman:
   #ansible.builtin.package:
     name: firefox

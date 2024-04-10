@@ -16,4 +16,4 @@ sudo pacman -Syu
 echo "Installing ansible..."
 # sudo pacman -S ansible
 yay -S ansible-core
-ansible-galaxy collection install my_namespace.my_collection
+ansible-galaxy collection install community.general
