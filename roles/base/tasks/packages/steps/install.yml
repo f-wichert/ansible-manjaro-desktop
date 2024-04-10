@@ -1,21 +1,22 @@
-# - name: install | apt packages
-#   block:
-#     - name: install | apt packages
-#       package:
-#         name:
-#           # basic stuff and dependencies
-#           - git
-#           - thunderbird
-#         state: latest
-#       register: packages
-#       until: packages is success
-#       retries: 10
-#       delay: 10
-#   rescue:
-#     - set_fact: task_failed=true
+---
 
-- name: install | firefox | pacman.yml
-  community.general.pacman:
-  #ansible.builtin.package:
-    name: firefox
-    state: present
+- name: install | apt packages
+  block:
+    - name: install | apt packages
+      community.general.pacman:
+        name:
+          # basic stuff and dependencies
+          - git
+          - thunderbird
+        state: latest
+      register: packages
+      until: packages is success
+      retries: 10
+      delay: 10
+  rescue:
+    - set_fact: task_failed=true
+
+# - name: install | firefox
+#   community.general.pacman:
+#     name: firefox
+#     state: present
