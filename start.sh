@@ -17,3 +17,6 @@ echo "Installing ansible..."
 # sudo pacman -S ansible
 yay -S ansible-core
 ansible-galaxy collection install community.general
+
+# Execute ansible
+ansible-pull -K -U https://github.com/f-wichert/ansible-manjaro-desktop

@@ -1,6 +1,7 @@
 ---
-- name: Install package firefox | packages tasks
-  community.general.pacman:
-  #ansible.builtin.package:
-    name: firefox
-    state: present
+
+# packages
+#- import_tasks: roles/base/tasks/packages/steps/repositories.yml
+- import_tasks: roles/base/tasks/packages/steps/install.yml
+#- import_tasks: roles/base/tasks/packages/steps/oh-my-zsh.yml
+#- import_tasks: roles/base/tasks/packages/steps/dracula-terminal.yml
