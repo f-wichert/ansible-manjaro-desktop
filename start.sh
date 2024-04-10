@@ -8,9 +8,16 @@ fi
 
 
 
+# User input
+echo -e "\n"
+echo "Enter your username:"
+read -e -p "Enter Ubuntu username: ($SUDO_USER) " -i $SUDO_USER user_login
+
+
+
 # System update
 #read -e -p "Do you want to start a full system upgrade? [Y/n]" -i 'Y' response
-read -e -p "Do you want to start a full system upgrade? [Y/n]" response
+read -e -p "Do you want to start a full system upgrade? [Y/n] " response
 
 while true; do
   case "$response" in
