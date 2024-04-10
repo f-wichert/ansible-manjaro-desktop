@@ -1,6 +1,6 @@
 ---
 
-- name: Intro to Ansible Playbooks
+- name: Intro to Ansible Playbooks Test
   hosts: localhost
   become: true
   roles:
