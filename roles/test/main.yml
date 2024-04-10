@@ -1,0 +1,5 @@
+---
+- name: Install package firefox
+  community.general.pacman:
+    name: firefox
+    state: present
