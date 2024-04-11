@@ -1,6 +1,0 @@
----
-
-# packages
-- import_tasks: roles/base/tasks/packages/steps/install.yml
-- import_tasks: roles/base/tasks/packages/steps/oh-my-zsh.yml
-#- import_tasks: roles/base/tasks/packages/steps/dracula-terminal.yml

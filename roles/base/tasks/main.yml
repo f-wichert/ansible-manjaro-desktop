@@ -2,8 +2,10 @@
 - name: base | configure manjaro (packages, apps, setup, etc...)
   tags: install
   block:
-    - import_tasks: roles/base/tasks/packages/main.yml
+    # - import_tasks: roles/base/tasks/packages/main.yml
     # - import_tasks: roles/base/tasks/services/example.yml
     # - import_tasks: roles/base/tasks/ansible/setup.yml
+    - import_tasks: roles/base/tasks/steps/install.yml
+    - import_tasks: roles/base/tasks/steps/oh-my-zsh.yml
   rescue:
     - set_fact: task_failed=true

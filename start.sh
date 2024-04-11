@@ -31,23 +31,23 @@ read -e -p "Enter manjaro username: " -i $SUDO_USER user_login
 
 
 # Usage Example
-OPTIONS_VALUES=("packages" "oh-my-zsh" "i3" "polybar")
-OPTIONS_LABELS=("packages" "oh-my-zsh" "i3" "polybar")
+# OPTIONS_VALUES=("packages" "oh-my-zsh" "i3" "polybar")
+# OPTIONS_LABELS=("packages" "oh-my-zsh" "i3" "polybar")
 
-for i in "${!OPTIONS_VALUES[@]}"; do
-	#OPTIONS_STRING+="${OPTIONS_VALUES[$i]} (${OPTIONS_LABELS[$i]});"
-	OPTIONS_STRING+="${OPTIONS_VALUES[$i]};"
-done
+# for i in "${!OPTIONS_VALUES[@]}"; do
+# 	#OPTIONS_STRING+="${OPTIONS_VALUES[$i]} (${OPTIONS_LABELS[$i]});"
+# 	OPTIONS_STRING+="${OPTIONS_VALUES[$i]};"
+# done
 
-prompt_for_multiselect SELECTED "$OPTIONS_STRING"
+# prompt_for_multiselect SELECTED "$OPTIONS_STRING"
 
-for i in "${!SELECTED[@]}"; do
-	if [ "${SELECTED[$i]}" == "true" ]; then
-		CHECKED+=("${OPTIONS_VALUES[$i]},")
-	fi
-done
-CHECKED=${CHECKED[@]::-1}
-echo "${CHECKED}"
+# for i in "${!SELECTED[@]}"; do
+# 	if [ "${SELECTED[$i]}" == "true" ]; then
+# 		CHECKED+=("${OPTIONS_VALUES[$i]},")
+# 	fi
+# done
+# CHECKED=${CHECKED[@]::-1}
+# echo "${CHECKED}"
 
 
 
@@ -76,7 +76,7 @@ ansible-pull -K -U https://github.com/f-wichert/ansible-manjaro-desktop \
   #-e "cron_job_name='first install'" \
   #-e "git_user_name=$git_user_name" \
   #-e "git_user_email=$git_user_email" \
-  --tags "packages"
+  --tags "oh-my-zsh"
 
 
 
