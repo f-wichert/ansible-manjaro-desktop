@@ -22,7 +22,7 @@ done
 
 # User Input
 echo -e "\n"
-echo "Enter the following information:"
+echo "Enter the following information [arrows:move - space:select - enter:continue]:"
 
 echo -e "\n"
 echo "Enter your username:"
@@ -33,9 +33,11 @@ read -e -p "Enter manjaro username: " -i $SUDO_USER user_login
 # Usage Example
 OPTIONS_VALUES=("packages" "oh-my-zsh" "i3" "polybar")
 OPTIONS_LABELS=("packages" "oh-my-zsh" "i3" "polybar")
+SELECTED=(true true true true)
 
 for i in "${!OPTIONS_VALUES[@]}"; do
-	OPTIONS_STRING+="${OPTIONS_VALUES[$i]} (${OPTIONS_LABELS[$i]});"
+	#OPTIONS_STRING+="${OPTIONS_VALUES[$i]} (${OPTIONS_LABELS[$i]});"
+	OPTIONS_STRING+="${OPTIONS_VALUES[$i]};"
 done
 
 prompt_for_multiselect SELECTED "$OPTIONS_STRING"
