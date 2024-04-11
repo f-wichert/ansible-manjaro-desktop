@@ -34,10 +34,10 @@
       
     - name: oh-my-zsh | clone 'headline' theme repo
       #ansible.builtin.git:
-      #  repo: https://github.com/moarram/headline.git
-      #  dest: '"{{ lookup('ansible.builtin.env', 'ZSH_CUSTOM') }}"/themes/headline'
-      #  # TODO: change hardcoded directory for $ZSH_CUSTOM
-      shell: git clone https://github.com/moarram/headline.git $ZSH_CUSTOM/themes/headline
+        repo: https://github.com/moarram/headline.git
+        dest: /home/{{ user_login }}/.oh-my-zsh/custom/themes/headline
+        # TODO: change hardcoded directory for $ZSH_CUSTOM
+      #shell: git clone https://github.com/moarram/headline.git $ZSH_CUSTOM/themes/headline
 
     - name: users | {{ user_login }} | create dircolor directory
       tags: user_config
