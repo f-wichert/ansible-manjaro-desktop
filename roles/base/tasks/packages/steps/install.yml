@@ -26,15 +26,15 @@
       until: packages is success
       retries: 10
       delay: 10
-    - name: install | pacman packages | additional 
-      community.general.pacman:
-        name:
-          - steam
-          - 
-        state: latest
-      register: packages
-      until: packages is success
-      retries: 10
-      delay: 10
+    #- name: install | pacman packages | additional 
+    #  community.general.pacman:
+    #    name:
+    #      - steam
+    #      - 
+    #    state: latest
+    #  register: packages
+    #  until: packages is success
+    #  retries: 10
+    #  delay: 10
   rescue:
     - set_fact: task_failed=true

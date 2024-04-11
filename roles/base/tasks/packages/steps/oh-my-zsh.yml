@@ -29,3 +29,35 @@
     # strug
 
     # headline
+
+    - name: oh-my-zsh | copy .zshrc
+        copy:
+          src: files/.zshrc
+          dest: /home/{{ user_login }}/.zshrc
+          owner: '{{ user_login }}'
+          group: '{{ user_login }}'
+          mode: 0644
+
+    - name: users | {{ user_login }} | create dircolor directory
+      tags: user_config
+      file:
+        path: /home/{{ user_login }}/{{ item.dir }}
+        state: directory
+        owner: '{{ user_login }}'
+        group: '{{ user_login }}'
+        mode: 0755
+      with_items:
+        - { dir: .dir_colors }
+
+    - name: oh-my-zsh | copy dircolors
+      copy:
+        src: files/dircolors
+        dest: /home/{{ user_login }}/.dir_colors/dircolors
+        owner: '{{ user_login }}'
+        group: '{{ user_login }}'
+        mode: 0644
+
+    - name: oh-my-zsh | remove oh-my-zsh script
+      file:
+        path: /tmp/oh_my_zsh_script.sh
+        state: absent
