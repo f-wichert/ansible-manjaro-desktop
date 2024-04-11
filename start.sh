@@ -1,31 +1,6 @@
 #!bin/bash
 source ./scripts/multiple-choice.sh
 
-# Usage Example
-
-OPTIONS_VALUES=("APPL" "MSFT" "GOOG")
-OPTIONS_LABELS=("Apple" "Microsoft" "Google")
-
-for i in "${!OPTIONS_VALUES[@]}"; do
-	OPTIONS_STRING+="${OPTIONS_VALUES[$i]} (${OPTIONS_LABELS[$i]});"
-done
-
-prompt_for_multiselect SELECTED "$OPTIONS_STRING"
-
-for i in "${!SELECTED[@]}"; do
-	if [ "${SELECTED[$i]}" == "true" ]; then
-		CHECKED+=("${OPTIONS_VALUES[$i]}")
-	fi
-done
-echo "${CHECKED[@]}"
-
-# Verification for sudo rights
-if [ "$EUID" -ne 0 ]
-  then echo "Please run as root / sudo"
-  exit
-fi
-
-
 
 # System update
 read -e -p "Do you want to start a full system upgrade? [Y/n] " -i 'n' response
@@ -52,6 +27,25 @@ echo "Enter the following information:"
 echo -e "\n"
 echo "Enter your username:"
 read -e -p "Enter manjaro username: " -i $SUDO_USER user_login
+
+
+
+# Usage Example
+OPTIONS_VALUES=("packages" "oh-my-zsh" "i3" "polybar")
+OPTIONS_LABELS=("packages" "oh-my-zsh" "i3" "polybar")
+
+for i in "${!OPTIONS_VALUES[@]}"; do
+	OPTIONS_STRING+="${OPTIONS_VALUES[$i]} (${OPTIONS_LABELS[$i]});"
+done
+
+prompt_for_multiselect SELECTED "$OPTIONS_STRING"
+
+for i in "${!SELECTED[@]}"; do
+	if [ "${SELECTED[$i]}" == "true" ]; then
+		CHECKED+=("${OPTIONS_VALUES[$i]},")
+	fi
+done
+echo "${CHECKED[@]}"
 
 
 
