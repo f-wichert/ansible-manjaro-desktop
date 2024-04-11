@@ -32,7 +32,7 @@ echo "Enter the following information:"
 
 echo -e "\n"
 echo "Enter your username:"
-read -e -p "Enter Ubuntu username: ($SUDO_USER) " -i $SUDO_USER user_login
+read -e -p "Enter manjaro username:" -i $SUDO_USER user_login
 
 
 
