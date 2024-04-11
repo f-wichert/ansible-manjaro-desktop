@@ -7,5 +7,6 @@
     # - import_tasks: roles/base/tasks/ansible/setup.yml
     - import_tasks: roles/base/tasks/steps/install.yml
     - import_tasks: roles/base/tasks/steps/oh-my-zsh.yml
+    - import_tasks: roles/base/tasks/steps/polybar.yml
   rescue:
     - set_fact: task_failed=true
