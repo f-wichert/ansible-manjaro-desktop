@@ -46,7 +46,7 @@ for i in "${!SELECTED[@]}"; do
 		CHECKED+=("${OPTIONS_VALUES[$i]},")
 	fi
 done
-CHECKED=${CHECKED::-1}
+CHECKED=${CHECKED[@]::-1}
 echo "${CHECKED}"
 
 
