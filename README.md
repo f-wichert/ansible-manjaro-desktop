@@ -9,11 +9,19 @@ This is specifically for a manjaro desktop using i3 as the window manager in com
 
 2. Start with a Manjaro i3 "full" install.
 
-3. Run the following command. This pulls the starting script, which runs a system upgrade, and starts the ansible playbook.
-Then:
+3. Run the following command. This pulls repo and executes the starting script:
 ```bash
 sudo su -c "bash <(wget -qO- https://raw.github.com/f-wichert/ansible-manjaro-desktop/main/start.sh)" root
 ```
+
+The above options wont work any longe because I wanted to make the script a little easier to read. Sucks to be you, you gotta exeute two command :O
+```bash
+git clone https://github.com/f-wichert/ansible-manjaro-desktop.git
+```
+```bash
+bash ansible-manjaro-desktop/start.sh
+```
+
 
 3. Reboot after finishing.
 
