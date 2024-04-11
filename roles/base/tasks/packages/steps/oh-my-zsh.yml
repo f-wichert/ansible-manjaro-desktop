@@ -31,12 +31,12 @@
     # headline
 
     - name: oh-my-zsh | copy .zshrc
-        copy:
-          src: files/.zshrc
-          dest: /home/fred/.zshrc
-          owner: 'fred'
-          group: 'fred'
-          mode: 0644
+      copy:
+        src: files/.zshrc
+        dest: /home/{{ user_login }}/.zshrc
+        owner: '{{ user_login }}'
+        group: '{{ user_login }}'
+        mode: 0644
 
     - name: users | {{ user_login }} | create dircolor directory
       tags: user_config
