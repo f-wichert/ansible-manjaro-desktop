@@ -4,7 +4,8 @@
   block:
     - name: i3 | install gdown
       ansible.builtin.pip:
-        name: bottle
+        name: gdown
+        extra_args: -S
       register: gdown_install
     - name: i3 | download wallpaper 
       become_user: '{{ user_login }}'
