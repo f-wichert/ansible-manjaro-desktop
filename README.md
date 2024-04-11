@@ -5,6 +5,7 @@ This is specifically for a manjaro desktop using i3 as the window manager in com
 
 
 ## Setup
+### From Scratch
 1. Don't forget to setup a wifi connection like I did.
 
 2. Start with a Manjaro i3 "full" install.
@@ -22,8 +23,27 @@ git clone https://github.com/f-wichert/ansible-manjaro-desktop.git
 bash ansible-manjaro-desktop/start.sh
 ```
 
-
 3. Reboot after finishing.
+
+
+### With installed dependencies
+1. (Alternative) If your system is up to date and you have ansible installed, plus all the ansible-galaxy requirements, you can pull the playbook directly, though you will have to set the input variables by hand:
+```bash
+ansible-pull -K -U https://guthub.com/f-wichert/ansible-manjaro-desktop -e user_login={{ your_username }} --tags "packages,oh-my-zsh,i3,polybar"
+```
+
+
+## Install options
+The install options are given as tags to the playbook. They handle which parts of the system will be installed. They include things such as:
+
+- packages
+- oh-my-zsh
+- polybar
+- i3
+
+All of these will be installed with my personal config files. 
+
+
 
 
 ## Things you might want to do before starting:
