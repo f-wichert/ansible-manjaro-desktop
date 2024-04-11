@@ -60,6 +60,7 @@ while true; do
         echo "Installing ansible..."
         yay -S ansible-core
         ansible-galaxy collection install community.general
+        ansible-galaxy collection install kewlfft.aur
         break
         ;;
       *)
