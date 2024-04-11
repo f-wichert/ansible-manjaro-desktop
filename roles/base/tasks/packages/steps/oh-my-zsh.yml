@@ -24,12 +24,6 @@
       register: oh_my_zsh_install
       ignore_errors: True
 
-    # jonathan 
-    # sorin
-    # strug
-
-    # headline
-
     - name: oh-my-zsh | copy .zshrc
       copy:
         src: files/.zshrc
@@ -37,6 +31,11 @@
         owner: '{{ user_login }}'
         group: '{{ user_login }}'
         mode: 0644
+      
+    - name: oh-my-zsh | clone 'headline' theme repo
+      ansible.builtin.git:
+        repo: https://github.com/moarram/headline.git
+        dest: $ZSH_CUSTOM/themes/headline
 
     - name: users | {{ user_login }} | create dircolor directory
       tags: user_config
@@ -57,7 +56,7 @@
         group: '{{ user_login }}'
         mode: 0644
 
-    #- name: oh-my-zsh | remove oh-my-zsh script
-    #  file:
-    #    path: /tmp/oh_my_zsh_script.sh
-    #    state: absent
+    - name: oh-my-zsh | remove oh-my-zsh script
+      file:
+        path: /tmp/oh_my_zsh_script.sh
+        state: absent
