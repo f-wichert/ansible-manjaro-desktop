@@ -1,7 +1,7 @@
 # Ansible with Manjaro-Desktop Setup
-My approach at using ansible to automate my desktop setup, after I messed up my system a couple of times.
+My approach at using ansible to automate my desktop setup. This is specifically for a manjaro desktop using i3 as the window manager in combination with polybar. I plan on adding some configuration options but that is for the future. First is getting this ready to be used.
 
-This is specifically for a manjaro desktop using i3 as the window manager in combination with polybar. I plan on adding some configuration options but that is for the future. First is getting this ready to be used.
+Credit where credit is due, this is heavily inspired by other [repos](https://github.com/jothi-prasath/archlinux-playbook?tab=readme-ov-file). I created this to have a personalized setup experience and to learn something. Also because earlier the day of starting this I bombed my system.
 
 
 ## Setup
@@ -15,7 +15,7 @@ This is specifically for a manjaro desktop using i3 as the window manager in com
 sudo su -c "bash <(wget -qO- https://raw.github.com/f-wichert/ansible-manjaro-desktop/main/start.sh)" root
 ```
 
-The above options wont work any longe because I wanted to make the script a little easier to read. Sucks to be you, you gotta exeute two command :O
+The above options wont work any longe because I wanted to make the script a little easier to read. Sucks to be you, you gotta exeute two commands :O
 ```bash
 git clone https://github.com/f-wichert/ansible-manjaro-desktop.git
 ```
@@ -23,7 +23,7 @@ git clone https://github.com/f-wichert/ansible-manjaro-desktop.git
 bash ansible-manjaro-desktop/start.sh
 ```
 
-3. Reboot after finishing.
+4. Reboot after finishing.
 
 
 ### With installed dependencies
@@ -55,7 +55,7 @@ This will send notifications in case of success or failure.
 
 
 ## Should I use this as is?
-Probably not. But you are welcome. Feel free to fork and potentially merge, ideally with some user input for text. My dream is to make it easy to setup arch without any prerequisites.
+Probably not. But you are welcome. This playbook sets up a system to immedeately use. This includes my preferred configs and packages. But: feel free to fork and potentially merge. My dream is to make it easy to setup arch without any prerequisites.
 
 
 ### What you can do is:
@@ -67,8 +67,8 @@ Probably not. But you are welcome. Feel free to fork and potentially merge, idea
 
 
 ## Future Plans
-[] Add options to execute just parts of the playbook, like only setting up polybar or zsh
-[] Extend this to work with base arch as well
+- [] Add options to execute just parts of the playbook, like only setting up polybar or zsh
+- [] Extend this to work with base arch as well
 
 
 ## Constants in the script
