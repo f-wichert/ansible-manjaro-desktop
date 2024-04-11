@@ -26,7 +26,7 @@
 
     - name: oh-my-zsh | copy .zshrc
       copy:
-        src: files/.zshrc
+        src: files/zsh/.zshrc
         dest: /home/{{ user_login }}/.zshrc
         owner: '{{ user_login }}'
         group: '{{ user_login }}'
