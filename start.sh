@@ -33,7 +33,6 @@ read -e -p "Enter manjaro username: " -i $SUDO_USER user_login
 # Usage Example
 OPTIONS_VALUES=("packages" "oh-my-zsh" "i3" "polybar")
 OPTIONS_LABELS=("packages" "oh-my-zsh" "i3" "polybar")
-SELECTED=(true true true true)
 
 for i in "${!OPTIONS_VALUES[@]}"; do
 	#OPTIONS_STRING+="${OPTIONS_VALUES[$i]} (${OPTIONS_LABELS[$i]});"
@@ -47,7 +46,8 @@ for i in "${!SELECTED[@]}"; do
 		CHECKED+=("${OPTIONS_VALUES[$i]},")
 	fi
 done
-echo "${CHECKED[@]}"
+CHECKED=${CHECKED::-1}
+echo "${CHECKED}"
 
 
 
