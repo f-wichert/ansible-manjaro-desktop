@@ -37,9 +37,23 @@ read -e -p "Enter manjaro username: " -i $SUDO_USER user_login
 
 
 # Install ansible
-echo "Installing ansible..."
-yay -S ansible-core
-ansible-galaxy collection install community.general
+read -e -p "Do you want to install ansible + requirements? [Y/n] " -i 'n' response
+
+while true; do
+  case "$response" in
+      [yY][eE][sS]|[yY])
+        echo "Installing ansible..."
+        yay -S ansible-core
+        ansible-galaxy collection install community.general
+        break
+        ;;
+      *)
+        echo "Continuing without installing ansible..."
+        break
+        ;;
+  esac
+done
+
 
 # Execute ansible
 ansible-pull -K -U https://github.com/f-wichert/ansible-manjaro-desktop \
@@ -47,6 +61,8 @@ ansible-pull -K -U https://github.com/f-wichert/ansible-manjaro-desktop \
   #-e "cron_job_name='first install'" \
   #-e "git_user_name=$git_user_name" \
   #-e "git_user_email=$git_user_email" \
+  --tags "packages"
+
 
 
 # use --tags "tag1,tag2" to run only the tasks tagged with tag1 and tag2
