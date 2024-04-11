@@ -33,10 +33,11 @@
         mode: 0644
       
     - name: oh-my-zsh | clone 'headline' theme repo
-      ansible.builtin.git:
-        repo: https://github.com/moarram/headline.git
-        dest: '"{{ lookup('ansible.builtin.env', 'ZSH_CUSTOM') }}"/themes/headline'
-        # TODO: change hardcoded directory for $ZSH_CUSTOM
+      #ansible.builtin.git:
+      #  repo: https://github.com/moarram/headline.git
+      #  dest: '"{{ lookup('ansible.builtin.env', 'ZSH_CUSTOM') }}"/themes/headline'
+      #  # TODO: change hardcoded directory for $ZSH_CUSTOM
+      shell: git clone https://github.com/moarram/headline.git $ZSH_CUSTOM/themes/headline
 
     - name: users | {{ user_login }} | create dircolor directory
       tags: user_config
@@ -56,6 +57,10 @@
         owner: '{{ user_login }}'
         group: '{{ user_login }}'
         mode: 0644
+
+    #- name: oh-my-zsh | make oh-my-zsh default shell
+    #  shell: sudo -k chsh -s $(which zsh) {{ user_login }}
+    #  when: oh_my_zsh_install.changed and oh_my_zsh_install is succeeded
 
     - name: oh-my-zsh | remove oh-my-zsh script
       file:
