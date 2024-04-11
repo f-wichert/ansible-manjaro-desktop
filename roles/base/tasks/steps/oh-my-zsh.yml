@@ -50,13 +50,13 @@
       with_items:
         - { dir: .dir_colors }
 
-    - name: oh-my-zsh | copy dircolors
-      copy:
-        src: files/dircolors
-        dest: /home/{{ user_login }}/.dir_colors/dircolors
-        owner: '{{ user_login }}'
-        group: '{{ user_login }}'
-        mode: 0644
+    #- name: oh-my-zsh | copy dircolors
+    #  copy:
+    #    src: files/dircolors
+    #    dest: /home/{{ user_login }}/.dir_colors/dircolors
+    #    owner: '{{ user_login }}'
+    #    group: '{{ user_login }}'
+    #    mode: 0644
 
     - name: oh-my-zsh | make oh-my-zsh default shell
       shell: sudo -k chsh -s $(which zsh) {{ user_login }}
