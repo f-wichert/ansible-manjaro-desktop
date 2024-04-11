@@ -1,4 +1,23 @@
 #!bin/bash
+source ./scripts/multiple-choice.sh
+
+# Usage Example
+
+OPTIONS_VALUES=("APPL" "MSFT" "GOOG")
+OPTIONS_LABELS=("Apple" "Microsoft" "Google")
+
+for i in "${!OPTIONS_VALUES[@]}"; do
+	OPTIONS_STRING+="${OPTIONS_VALUES[$i]} (${OPTIONS_LABELS[$i]});"
+done
+
+prompt_for_multiselect SELECTED "$OPTIONS_STRING"
+
+for i in "${!SELECTED[@]}"; do
+	if [ "${SELECTED[$i]}" == "true" ]; then
+		CHECKED+=("${OPTIONS_VALUES[$i]}")
+	fi
+done
+echo "${CHECKED[@]}"
 
 # Verification for sudo rights
 if [ "$EUID" -ne 0 ]

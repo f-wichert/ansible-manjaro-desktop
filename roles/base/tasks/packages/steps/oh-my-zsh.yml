@@ -66,3 +66,6 @@
       file:
         path: /tmp/oh_my_zsh_script.sh
         state: absent
+
+  tags:
+    - oh-my-zsh
