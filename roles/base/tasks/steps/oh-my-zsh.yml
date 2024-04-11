@@ -39,16 +39,16 @@
         # TODO: change hardcoded directory for $ZSH_CUSTOM
       #shell: git clone https://github.com/moarram/headline.git $ZSH_CUSTOM/themes/headline
 
-    - name: users | {{ user_login }} | create dircolor directory
-      tags: user_config
-      file:
-        path: /home/{{ user_login }}/{{ item.dir }}
-        state: directory
-        owner: '{{ user_login }}'
-        group: '{{ user_login }}'
-        mode: 0755
-      with_items:
-        - { dir: .dir_colors }
+    #- name: users | {{ user_login }} | create dircolor directory
+    #  tags: user_config
+    #  file:
+    #    path: /home/{{ user_login }}/{{ item.dir }}
+    #    state: directory
+    #    owner: '{{ user_login }}'
+    #    group: '{{ user_login }}'
+    #    mode: 0755
+    #  with_items:
+    #    - { dir: .dir_colors }
 
     #- name: oh-my-zsh | copy dircolors
     #  copy:
