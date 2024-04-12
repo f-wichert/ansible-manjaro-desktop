@@ -29,7 +29,7 @@
         dest: /home/{{ user_login }}/.config/polybar/launch.sh
         owner: '{{ user_login }}'
         group: '{{ user_login }}'
-        mode: 0644
+        mode: 0755
 
 
   tags:
