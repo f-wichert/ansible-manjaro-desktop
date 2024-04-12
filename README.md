@@ -5,9 +5,9 @@ This is my approach at using ansible to automate my desktop setup. It is specifi
 ## Preview
 Here are some screenshots of what you can expect:
 
-![alt text](https://github.com/f-wichert/ansible-manjaro-desktop/blob/main/res/desktop_preview?raw=true)
+![Desktop Preview](https://github.com/f-wichert/ansible-manjaro-desktop/blob/main/res/desktop_preview.png?raw=true)
 
-![alt text](https://github.com/f-wichert/ansible-manjaro-desktop/blob/main/res/zsh_theme.png?raw=true)
+![ZSH Preview](https://github.com/f-wichert/ansible-manjaro-desktop/blob/main/res/zsh_theme.png?raw=true)
 
 
 ## Setup
@@ -16,20 +16,17 @@ Here are some screenshots of what you can expect:
 
 2. Start with a Manjaro i3 "full" install.
 
-3. Run the following command. This pulls repo and executes the starting script:
-```bash
-sudo su -c "bash <(wget -qO- https://raw.github.com/f-wichert/ansible-manjaro-desktop/main/start.sh)" root
-```
-
-The above options wont work any longe because I wanted to make the script a little easier to read. Sucks to be you, you gotta exeute two commands :O
+3. Pull the repo:
 ```bash
 git clone https://github.com/f-wichert/ansible-manjaro-desktop.git
 ```
+
+4. Execute the starting script. Enter you systems password when prompted "BEFORE"
 ```bash
 bash ansible-manjaro-desktop/start.sh
 ```
 
-4. Reboot after finishing.
+5. Reboot after finishing.
 
 
 ### With installed dependencies
@@ -40,15 +37,20 @@ ansible-pull -K -U https://guthub.com/f-wichert/ansible-manjaro-desktop -e user_
 
 
 ## Install options
-The install options are given as tags to the playbook. They handle which parts of the system will be installed. They include things such as:
+The install options are given as tags to the playbook, when executing the starting script, this includes all tags. In case you want to execute only parts of the playbook, here are the tags used. They handle which parts of the system will be installed. They include things such as:
 
-- packages
-- oh-my-zsh
-- polybar
-- i3
+- setup
+    - Handles things which need to be done before the actual base step, such as setting permissions etc.
+- base
+    - This is where the magic happens. This tag includes all things that are relevant to you as a user that you will see.
+    - packages
+    - oh-my-zsh
+    - polybar
+    - i3-config
+- cleanup 
+    - Cleans leftovers from setup and base, like removal of temp files etc.
 
 All of these will be installed with my personal config files. 
-
 
 
 
@@ -78,5 +80,6 @@ Probably not. But you are welcome. This playbook sets up a system to immedeately
 
 
 ## Credits
-Credit where credit is due, this is heavily inspired by other [repos](https://github.com/jothi-prasath/archlinux-playbook?tab=readme-ov-file). I created this to have a personalized setup experience and to learn something. Also because earlier the day of starting this I bombed my system.
+Credit where credit is due, this is heavily inspired by other [repos](https://github.com/jothi-prasath/archlinux-playbook?tab=readme-ov-file). I created this to have a personalized setup experience and to learn something. Also because earlier the day of starting this repo I bombed my system. Again.
+[This](https://github.com/j-milkovits/.dotfiles/tree/main) is were I took inspiration for most of my dotfiles to configure polybar. Works like a charm and looks good. 
 
