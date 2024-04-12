@@ -2,6 +2,13 @@
 This is my approach at using ansible to automate my desktop setup. It is specifically for a manjaro desktop using i3 in combination with polybar. I plan on adding some configuration options but that is for the future. First is getting this ready to be used.
 
 
+## Preview
+Here are some screenshots of what you can expect:
+
+![alt text](https://github.com/f-wichert/ansible-manjaro-desktop/blob/main/res/desktop_preview?raw=true)
+
+![alt text](https://github.com/f-wichert/ansible-manjaro-desktop/blob/main/res/zsh_theme.png?raw=true)
+
 
 ## Setup
 ### From Scratch
@@ -72,3 +79,4 @@ Probably not. But you are welcome. This playbook sets up a system to immedeately
 
 ## Credits
 Credit where credit is due, this is heavily inspired by other [repos](https://github.com/jothi-prasath/archlinux-playbook?tab=readme-ov-file). I created this to have a personalized setup experience and to learn something. Also because earlier the day of starting this I bombed my system.
+
