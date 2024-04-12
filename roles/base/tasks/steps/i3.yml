@@ -3,12 +3,6 @@
 - name: packages | configure i3
   block:
     - name: i3 | install gdown
-      ansible.builtin.pip:
-        name: gdown
-        extra_args: -S
-      register: gdown_install
-
-    - name: Install trizen using makepkg if it isn't installed already
       kewlfft.aur.aur:
         name: gdown
         use: makepkg
