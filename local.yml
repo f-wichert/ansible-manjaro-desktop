@@ -4,4 +4,5 @@
   hosts: localhost
   become: true
   roles:
+    - setup
     - base
