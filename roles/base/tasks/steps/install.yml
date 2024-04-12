@@ -5,6 +5,7 @@
     - name: install | pacman packages | coding
       community.general.pacman:
         name:
+          - feh
           - git
           - python-pip
           # - code
