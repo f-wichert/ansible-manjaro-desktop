@@ -22,5 +22,18 @@
       when: gdown_check.stdout.find('gdown') != 1
 
       #https://drive.google.com/file/d/1iAmmkOTMi8W7_-rr2JoGx9ssKk138DXm/view?usp=sharing
+
+    - name: oh-my-zsh | copy .zshrc
+      copy:
+        src: files/i3/config
+        dest: /home/{{ user_login }}/.i3
+        owner: '{{ user_login }}'
+        group: '{{ user_login }}'
+        mode: 0644
+
+    #- name: i3 | download wallpaper 
+    #  become_user: '{{ user_login }}'
+    #  shell: gdown 1iAmmkOTMi8W7_-rr2JoGx9ssKk138DXm -O /home/{{ user_login }}/Pictures/default_wallpaper.jpg
+    #  when: gdown_check.stdout.find('gdown') != 1
   tags:
     - i3-config
