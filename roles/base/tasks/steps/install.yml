@@ -8,8 +8,8 @@
           - feh
           - git
           - python-pip
-          # - code
-          # - nodejs
+          - code
+          - nodejs
         state: latest
       register: packages
       until: packages is success
@@ -19,10 +19,11 @@
       community.general.pacman:
         name:
           - firefox
-          # - insync
-          # - thunderbird
-          # - telegram
-          # - obsidian
+          - insync
+          - thunderbird
+          - telegram-desktop
+          - obsidian
+          - flameshot
         state: latest
       register: packages
       until: packages is success

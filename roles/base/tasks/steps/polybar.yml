@@ -9,6 +9,16 @@
         state: latest
       register: oh_my_zsh
 
+    - name: polybar | install required font
+      community.general.pacman:
+        name:
+          - ttf-font-awesome
+        state: latest
+      register: packages
+      until: packages is success
+      retries: 10
+      delay: 10
+
     - name: polybar | create polybar directory
       ansible.builtin.file:
         path: /home/{{ user_login }}/.config/polybar

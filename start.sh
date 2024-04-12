@@ -3,7 +3,7 @@ source ./scripts/multiple-choice.sh
 
 
 # System update
-read -e -p "Do you want to start a full system upgrade? [Y/n] " -i 'n' response
+read -e -p "Do you want to start a full system upgrade? [Y/n] " -i 'Y' response
 
 while true; do
   case "$response" in
@@ -22,11 +22,12 @@ done
 
 # User Input
 echo -e "\n"
-echo "Enter the following information [arrows:move - space:select - enter:continue]:"
+echo "Enter the following information::"
+#echo "Enter the following information [arrows:move - space:select - enter:continue]:"
 
 echo -e "\n"
 echo "Enter your username:"
-read -e -p "Enter manjaro username: " -i $SUDO_USER user_login
+read -e -p "Enter manjaro username: " user_login
 
 
 
@@ -52,7 +53,7 @@ read -e -p "Enter manjaro username: " -i $SUDO_USER user_login
 
 
 # Install ansible
-read -e -p "Do you want to install ansible + requirements? [Y/n] " -i 'n' response
+read -e -p "Do you want to install ansible + requirements? [Y/n] " -i 'Y' response
 
 while true; do
   case "$response" in
@@ -77,11 +78,11 @@ ansible-pull -K -U https://github.com/f-wichert/ansible-manjaro-desktop \
   #-e "cron_job_name='first install'" \
   #-e "git_user_name=$git_user_name" \
   #-e "git_user_email=$git_user_email" \
-  --tags "oh-my-zsh"
+  --tags all
 
 
 
-# use --tags "tag1,tag2" to run only the tasks tagged with tag1 and tag2
+# TODO: include userinput for specific tags
 
 # use --tags "always" to run only the tasks tagged with "always" (basically the basic stuff)
 # run without --tags to run everything

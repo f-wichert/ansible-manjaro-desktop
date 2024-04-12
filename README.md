@@ -1,7 +1,6 @@
 # Ansible with Manjaro-Desktop Setup
-My approach at using ansible to automate my desktop setup. This is specifically for a manjaro desktop using i3 as the window manager in combination with polybar. I plan on adding some configuration options but that is for the future. First is getting this ready to be used.
+This is my approach at using ansible to automate my desktop setup. It is specifically for a manjaro desktop using i3 in combination with polybar. I plan on adding some configuration options but that is for the future. First is getting this ready to be used.
 
-Credit where credit is due, this is heavily inspired by other [repos](https://github.com/jothi-prasath/archlinux-playbook?tab=readme-ov-file). I created this to have a personalized setup experience and to learn something. Also because earlier the day of starting this I bombed my system.
 
 
 ## Setup
@@ -71,8 +70,5 @@ Probably not. But you are welcome. This playbook sets up a system to immedeately
 - [] Extend this to work with base arch as well
 
 
-## Constants in the script
-There are a few potential sources of errors, so if something is not working for you, this section is meant as a little documentation of what might be wrong
-
-1. oh my zsh install script
-2. omz theme location
+## Credits
+Credit where credit is due, this is heavily inspired by other [repos](https://github.com/jothi-prasath/archlinux-playbook?tab=readme-ov-file). I created this to have a personalized setup experience and to learn something. Also because earlier the day of starting this I bombed my system.
