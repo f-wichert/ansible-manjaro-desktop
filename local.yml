@@ -3,11 +3,5 @@
 - name: Base configuration (packages, zsh, polybar, etc.)
   hosts: localhost
   become: true
-  block:
-    - name: base
-      roles:
-        - base
-
-
-  #roles:
-  #  - base
+  roles:
+    - base
