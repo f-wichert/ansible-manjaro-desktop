@@ -1,6 +1,6 @@
 ---
 
-- name: packages | add oh-my-zsh
+- name: packages | add polybar
   block:
     - name: polybar | install polybar
       community.general.pacman:
@@ -8,6 +8,22 @@
           - polybar
         state: latest
       register: oh_my_zsh
+
+    #- name: polybar | copy config
+    #  copy:
+    #    src: files/polybar/config.ini
+    #    dest: /home/{{ user_login }}/.i3
+    #    owner: '{{ user_login }}'
+    #    group: '{{ user_login }}'
+    #    mode: 0644
+
+    #- name: polybar | copy launch script
+    #  copy:
+    #    src: files/polybar/launch.sh
+    #    dest: /home/{{ user_login }}/.i3
+    #    owner: '{{ user_login }}'
+    #    group: '{{ user_login }}'
+    #    mode: 0644
 
 
   tags:
