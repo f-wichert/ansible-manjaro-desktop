@@ -77,6 +77,9 @@ Probably not. But you are welcome. This playbook sets up a system to immedeately
 ## Future Plans
 - [] Add options to execute just parts of the playbook, like only setting up polybar or zsh
 - [] Extend this to work with base arch as well
+- [] Add option for external .dotfiles repositories
+- [] Maybe add different themes to choose from
+- [] Definitely add some backups for packages, files etc. if they are failed to be retrieved
 
 
 ## Credits
