@@ -14,7 +14,7 @@
       when: gdown_check.stdout.find('gdown') == 1
       become: yes
       become_user: aur_builder
-      register: gdown_install is ok
+      register: gdown_install
 
     - name: i3 | download wallpaper 
       become_user: '{{ user_login }}'
