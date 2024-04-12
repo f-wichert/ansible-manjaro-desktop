@@ -18,7 +18,7 @@
     - name: polybar | copy config
       copy:
         src: files/polybar/config.ini
-        dest: /home/{{ user_login }}/.config/polybar/config.ini
+        dest: /home/{{ user_login }}/.config/polybar/
         owner: '{{ user_login }}'
         group: '{{ user_login }}'
         mode: 0644
