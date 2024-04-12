@@ -2,11 +2,16 @@
 
 - name: packages | configure i3
   block:
+    - name: i3 | check gdwon installation
+      command: pacman -Qm
+      register: gdown_check
+    
     - name: i3 | install gdown
       kewlfft.aur.aur:
         name: gdown
         use: makepkg
         state: present
+      when: gdown_check.stdout.find('gdown') == 1
       become: yes
       become_user: aur_builder
       register: gdown_install is ok
