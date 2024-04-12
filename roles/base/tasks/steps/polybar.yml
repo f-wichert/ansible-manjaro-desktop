@@ -9,16 +9,16 @@
         state: latest
       register: oh_my_zsh
 
-    #- name: Create a directory if it does not exist
-    #  ansible.builtin.file:
-    #    path: /home//.config/
-    #    state: directory
-    #    mode: '0755'
+    - name: polybar | create polybar directory
+      ansible.builtin.file:
+        path: /home//.config/
+        state: directory
+        mode: '0755'
 
     - name: polybar | copy config
       copy:
         src: files/polybar/config.ini
-        dest: /home/{{ user_login }}/.config/polybar/
+        dest: /home/{{ user_login }}/.config/polybar/config.ini
         owner: '{{ user_login }}'
         group: '{{ user_login }}'
         mode: 0644
