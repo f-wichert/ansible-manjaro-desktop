@@ -11,7 +11,7 @@
 
     - name: polybar | create polybar directory
       ansible.builtin.file:
-        path: /home/{{ user_login }}/.config/polyar
+        path: /home/{{ user_login }}/.config/polybar
         state: directory
         mode: '0755'
 
@@ -23,13 +23,13 @@
         group: '{{ user_login }}'
         mode: 0644
 
-    #- name: polybar | copy launch script
-    #  copy:
-    #    src: files/polybar/launch.sh
-    #    dest: /home/{{ user_login }}/.i3
-    #    owner: '{{ user_login }}'
-    #    group: '{{ user_login }}'
-    #    mode: 0644
+    - name: polybar | copy launch script
+      copy:
+        src: files/polybar/launch.sh
+        dest: /home/{{ user_login }}/.config/polybar/launch.sh
+        owner: '{{ user_login }}'
+        group: '{{ user_login }}'
+        mode: 0644
 
 
   tags:
