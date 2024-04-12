@@ -19,7 +19,7 @@
     - name: i3 | download wallpaper 
       become_user: '{{ user_login }}'
       shell: gdown 1iAmmkOTMi8W7_-rr2JoGx9ssKk138DXm -O /home/{{ user_login }}/Pictures 
-      when: gdown_install.changed
+      when: gdown_check.stdout.find('gdown') == 1
 
       #https://drive.google.com/file/d/1iAmmkOTMi8W7_-rr2JoGx9ssKk138DXm/view?usp=sharing
   tags:
