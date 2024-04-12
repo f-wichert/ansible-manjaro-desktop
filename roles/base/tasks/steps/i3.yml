@@ -7,6 +7,15 @@
         name: gdown
         extra_args: -S
       register: gdown_install
+
+    - name: Install trizen using makepkg if it isn't installed already
+      kewlfft.aur.aur:
+        name: gdown
+        use: makepkg
+        state: present
+      become: yes
+      become_user: aur_builder
+
     - name: i3 | download wallpaper 
       become_user: '{{ user_login }}'
       shell: gdown 1iAmmkOTMi8W7_-rr2JoGx9ssKk138DXm -O /home/{{ user_login }}/Pictures 

@@ -59,7 +59,8 @@
     #    mode: 0644
 
     - name: oh-my-zsh | make oh-my-zsh default shell
-      shell: sudo -k chsh -s $(which zsh) {{ user_login }}
+      shell: chsh -s /bin/zsh {{ user_login }}
+    #  shell: sudo -k chsh -s $(which zsh) {{ user_login }}
     #  when: oh_my_zsh_install.changed and oh_my_zsh_install is succeeded
 
     - name: oh-my-zsh | remove oh-my-zsh script

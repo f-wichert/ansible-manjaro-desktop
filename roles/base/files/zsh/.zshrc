@@ -15,7 +15,9 @@ ZSH_THEME="headline/headline"
     # sorin
     # strug
 # External
-    # headline
+    # Headline
+    # Oxide
+    # Jovial
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
