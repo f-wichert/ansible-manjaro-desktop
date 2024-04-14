@@ -21,6 +21,13 @@ Here are some screenshots of what you can expect:
 git clone https://github.com/f-wichert/ansible-manjaro-desktop.git
 ```
 
+3. (Temporary step) There is still a small error in the script. To avoid that, simply run these commands by hand and ignore the ansible insallation from the script:
+```bash
+yay -S ansible-core
+ansible-galaxy collection install community.general
+ansible-galaxy collection install kewlfft.aur
+```
+
 4. Execute the starting script. Enter you systems password when prompted "BEFORE"
 ```bash
 bash ansible-manjaro-desktop/start.sh
