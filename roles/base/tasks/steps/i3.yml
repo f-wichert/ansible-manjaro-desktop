@@ -11,7 +11,7 @@
         name: gdown
         use: makepkg
         state: present
-      when: gdown_check.stdout.find('gdown') == 1
+      when: gdown_check.stdout.find('gdown') != 1
       become: yes
       become_user: aur_builder
       register: gdown_install
@@ -19,7 +19,7 @@
     - name: i3 | download wallpaper 
       become_user: '{{ user_login }}'
       shell: gdown 1GegbBF1CAhqHKasVigDv2bHhd85J2nBD -O /home/{{ user_login }}/Pictures/default_wallpaper.png
-      when: gdown_check.stdout.find('gdown') != 1
+      when: gdown_check.stdout.find('gdown') == 1 or gdown_install.changed
 
       #https://drive.google.com/file/d/1iAmmkOTMi8W7_-rr2JoGx9ssKk138DXm/view?usp=sharing
       #https://drive.google.com/file/d/1GegbBF1CAhqHKasVigDv2bHhd85J2nBD/view?usp=sharing

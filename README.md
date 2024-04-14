@@ -28,7 +28,7 @@ ansible-galaxy collection install community.general
 ansible-galaxy collection install kewlfft.aur
 ```
 
-4. Execute the starting script. Enter you systems password when prompted "BEFORE"
+4. Execute the starting script. Enter you systems password when prompted "BEFORE". Don't worry, some of the installation steps take a bit, so don't worry if it seems like nothing happens. For me the whole script took 
 ```bash
 bash ansible-manjaro-desktop/start.sh
 ```
