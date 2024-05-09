@@ -19,7 +19,6 @@
       community.general.pacman:
         name:
           - firefox
-          - insync
           - thunderbird
           - telegram-desktop
           - obsidian
@@ -29,6 +28,15 @@
       until: packages is success
       retries: 10
       delay: 10
+    #- name: install | yay packages | essential
+    #  community.general.pacman:
+    #    name:
+    #      - insync
+    #    state: latest
+    #  register: packages
+    #  until: packages is success
+    #  retries: 10
+    #  delay: 10
     #- name: install | pacman packages | additional 
     #  community.general.pacman:
     #    name:
