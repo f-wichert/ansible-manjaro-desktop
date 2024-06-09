@@ -28,7 +28,7 @@ ansible-galaxy collection install community.general
 ansible-galaxy collection install kewlfft.aur
 ```
 
-4. Execute the starting script. Enter you systems password when prompted "BEFORE". Don't worry, some of the installation steps take a bit, so don't worry if it seems like nothing happens. For me the whole script took around 10 minutes, depending on your internet.
+4. Execute the starting script. Enter you systems password when prompted "BECOME". Don't worry, some of the installation steps take a bit, so don't worry if it seems like nothing happens. For me the whole script took around 10 minutes, depending on your internet.
 ```bash
 bash ansible-manjaro-desktop/start.sh
 ```
@@ -39,7 +39,7 @@ bash ansible-manjaro-desktop/start.sh
 ### With installed dependencies
 1. (Alternative) If your system is up to date and you have ansible installed, plus all the ansible-galaxy requirements, you can pull the playbook directly, though you will have to set the input variables by hand:
 ```bash
-ansible-pull -K -U https://guthub.com/f-wichert/ansible-manjaro-desktop -e user_login={{ your_username }} --tags "packages,oh-my-zsh,i3,polybar"
+ansible-pull -K -U https://github.com/f-wichert/ansible-manjaro-desktop -e user_login={{ your_username }} --tags "packages,oh-my-zsh,i3,polybar"
 ```
 
 
