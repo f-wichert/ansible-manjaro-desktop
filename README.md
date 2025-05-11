@@ -11,7 +11,22 @@ Here are some screenshots of what you can expect:
 
 
 ## Setup
-### From Scratch
+### Setting up a clean Manjaro i3 version
+Start from here if you do not have a clean Manjaro installation ready.
+
+1. Download the "full" Manjaro i3 version from [here](https://manjaro.org/products/download/x86)
+
+2. Create a bootable USB drive. You can use [rufus](https://rufus.ie/en/) on Windows, or follow [this](https://wiki.manjaro.org/index.php/Burn_an_ISO_File) tutorial on linux
+
+3. Boot up the USB drive and follow the installation instructions
+
+### Running the ansible Script
+From this point forward I assume you have a clean Manjari i3 installation
+
+1. Establish an internet connection, for example using the [nmtui](https://wiki.archlinux.org/title/NetworkManager) command
+
+
+
 1. Don't forget to setup a wifi connection like I did.
 
 2. Start with a Manjaro i3 "full" install.
