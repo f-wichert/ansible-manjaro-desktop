@@ -1,5 +1,8 @@
 # Ansible with Manjaro-Desktop Setup
-This is my approach at using ansible to automate my desktop setup. It is specifically for a manjaro desktop using i3 in combination with polybar. I plan on adding some configuration options but that is for the future. First is getting this ready to be used.
+This is my approach at using ansible to automate my desktop setup, and serves primarily as a quick way for me to get a new laptop or pc up and running with the configurations I prefer.
+
+It is specifically designed for a manjaro desktop using i3 in combination with polybar. I plan on adding some configuration options but that has yet to happen.
+
 
 
 ## Preview
@@ -8,6 +11,7 @@ Here are some screenshots of what you can expect:
 ![Desktop Preview](https://github.com/f-wichert/ansible-manjaro-desktop/blob/main/res/desktop_preview.png?raw=true)
 
 ![ZSH Preview](https://github.com/f-wichert/ansible-manjaro-desktop/blob/main/res/zsh_theme.png?raw=true)
+
 
 
 ## Setup
@@ -20,38 +24,24 @@ Start from here if you do not have a clean Manjaro installation ready.
 
 3. Boot up the USB drive and follow the installation instructions
 
-### Running the ansible Script
-From this point forward I assume you have a clean Manjari i3 installation
+### Executing the installation script
+From this point forward I assume you have a clean Manjari i3 installation.
 
 1. Establish an internet connection, for example using the [nmtui](https://wiki.archlinux.org/title/NetworkManager) command
 
-
-
-1. Don't forget to setup a wifi connection like I did.
-
-2. Start with a Manjaro i3 "full" install.
-
-3. Pull the repo:
+2. Clone the repo.
 ```bash
 git clone https://github.com/f-wichert/ansible-manjaro-desktop.git
 ```
 
-3. (Temporary step) There is still a small error in the script. To avoid that, simply run these commands by hand and ignore the ansible insallation from the script:
-```bash
-yay -S ansible-core
-ansible-galaxy collection install community.general
-ansible-galaxy collection install kewlfft.aur
-```
-
-4. Execute the starting script. Enter you systems password when prompted "BECOME". Don't worry, some of the installation steps take a bit, so don't worry if it seems like nothing happens. For me the whole script took around 10 minutes, depending on your internet.
+4. Execute the starting script. This step may take some time, depending on your internect connection and chosen modules. 
 ```bash
 bash ansible-manjaro-desktop/start.sh
 ```
 
 5. Reboot after finishing.
 
-
-### With installed dependencies
+### Only executing the ansible playbook
 1. (Alternative) If your system is up to date and you have ansible installed, plus all the ansible-galaxy requirements, you can pull the playbook directly, though you will have to set the input variables by hand:
 ```bash
 ansible-pull -K -U https://github.com/f-wichert/ansible-manjaro-desktop -e user_login={{ your_username }} --tags "packages,oh-my-zsh,i3,polybar"
@@ -74,14 +64,6 @@ The install options are given as tags to the playbook, when executing the starti
 
 All of these will be installed with my personal config files. 
 
-
-
-## Things you might want to do before starting:
-
-### Telegram (optional)
-Setup a telegram bot and have the chat_id and token ready.
-
-This will send notifications in case of success or failure.
 
 
 ## Should I use this as is?

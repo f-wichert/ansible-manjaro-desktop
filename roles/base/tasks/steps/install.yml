@@ -28,6 +28,15 @@
       until: packages is success
       retries: 10
       delay: 10
+    - name: install | pacman packages | laptop
+      community.general.pacman:
+        name:
+          - tlp
+        state: latest
+      register: packages
+      until: packages is success
+      retries: 10
+      delay: 10
     #- name: install | yay packages | essential
     #  community.general.pacman:
     #    name:

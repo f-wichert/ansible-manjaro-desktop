@@ -1,0 +1,46 @@
+---
+
+- name: packages | add rofi
+  block:
+    - name: rofi | install rofi
+      community.general.pacman:
+        name:
+          - rofi
+        state: latest
+      register: rofi
+
+    - name: rofi | install required font
+      community.general.pacman:
+        name:
+          - ttf-font-awesome
+        state: latest
+      register: ttf-font-awesome
+      until: ttf-font-awesome is installed
+      retries: 10
+      delay: 10
+
+    - name: polybar | create polybar directory
+      ansible.builtin.file:
+        path: /home/{{ user_login }}/.config/polybar
+        state: directory
+        mode: '0755'
+
+    - name: polybar | copy config
+      copy:
+        src: files/polybar/config.ini
+        dest: /home/{{ user_login }}/.config/polybar/config.ini
+        owner: '{{ user_login }}'
+        group: '{{ user_login }}'
+        mode: 0644
+
+    - name: polybar | copy launch script
+      copy:
+        src: files/polybar/launch.sh
+        dest: /home/{{ user_login }}/.config/polybar/launch.sh
+        owner: '{{ user_login }}'
+        group: '{{ user_login }}'
+        mode: 0755
+
+
+  tags:
+    - rofi
