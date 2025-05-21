@@ -24,6 +24,18 @@
       register: oh_my_zsh_install
       ignore_errors: True
 
+    - name: oh-my-zsh | install plugins | zsh-autosuggestions
+      ansible.builtin.git:
+        repo: git clone https://github.com/zsh-users/zsh-autosuggestions.git 
+        dest: /home/{{ user_login }}/.oh-my-ysh-custom/plugins/zsh-autosuggestions
+        # TODO: change hardcoded directory for $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+    - name: oh-my-zsh | install plugins | zsh-autosuggestions
+      ansible.builtin.git:
+        repo: git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+        dest: /home/{{ user_login }}/.oh-my-ysh-custom/plugins/zsh-syntax-highlighting
+        # TODO: change hardcoded directory for $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
     - name: oh-my-zsh | copy .zshrc
       copy:
         src: files/zsh/.zshrc
