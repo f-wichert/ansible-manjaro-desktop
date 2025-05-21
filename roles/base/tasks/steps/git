@@ -1,0 +1,17 @@
+- name: git | set username
+  community.general.git_config:
+    name: user.name
+    scope: global
+    value: "{{ github_username }}"
+
+- name: git | set email
+  community.general.git_config:
+    name: user.email
+    scope: global
+    value: "{{ github_email }}"
+
+- name: git | set editor
+  community.general.git_config:
+    name: core.editor
+    scope: global
+    value: nvim
