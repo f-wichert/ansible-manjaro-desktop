@@ -6,11 +6,12 @@ It is specifically designed for a manjaro desktop using i3 in combination with p
 
 
 ## Preview
-Here are some screenshots of what you can expect:
+Desktop Preview            |  ZSH Preview
+:-------------------------:|:-------------------------:
+![Desktop Preview](https://github.com/f-wichert/ansible-manjaro-desktop/blob/main/res/desktop_preview.png?raw=true) |  ![ZSH Preview](https://github.com/f-wichert/ansible-manjaro-desktop/blob/main/res/zsh_theme.png?raw=true)
 
-![Desktop Preview](https://github.com/f-wichert/ansible-manjaro-desktop/blob/main/res/desktop_preview.png?raw=true)
 
-![ZSH Preview](https://github.com/f-wichert/ansible-manjaro-desktop/blob/main/res/zsh_theme.png?raw=true)
+
 
 
 
