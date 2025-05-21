@@ -1,0 +1,15 @@
+
+configuration {
+  /* Modi */
+  modi: "combi,calc";
+  font: "hack 10";
+  combi-modi: "drun,window,ssh";
+
+  /* Keybinds */
+  kb-mode-next: "Tab";
+  kb-row-tab: "";
+  kb-element-next: "";
+}
+
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+
