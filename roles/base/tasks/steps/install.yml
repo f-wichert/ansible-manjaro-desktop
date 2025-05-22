@@ -32,6 +32,7 @@
       community.general.pacman:
         name:
           - tlp
+          - kmonad
         state: latest
       register: packages
       until: packages is success

@@ -14,4 +14,4 @@
   community.general.git_config:
     name: core.editor
     scope: global
-    value: nvim
+    value: nano
